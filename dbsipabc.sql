@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 01, 2018 at 08:01 PM
+-- Generation Time: Feb 01, 2018 at 08:27 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 5.6.32
 
@@ -228,7 +228,8 @@ ALTER TABLE `kelas_matapelajaran`
 -- Constraints for table `kelas_pendidik`
 --
 ALTER TABLE `kelas_pendidik`
-  ADD CONSTRAINT `kelas_pendidik_ibfk_1` FOREIGN KEY (`NIP`) REFERENCES `pendidik` (`NIP`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `kelas_pendidik_ibfk_1` FOREIGN KEY (`NIP`) REFERENCES `pendidik` (`NIP`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `kelas_pendidik_ibfk_2` FOREIGN KEY (`id_kelas`) REFERENCES `kelas` (`id_kelas`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `kelas_peserta_didik`
