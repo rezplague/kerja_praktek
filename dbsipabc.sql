@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 01, 2018 at 08:42 PM
+-- Generation Time: Feb 01, 2018 at 08:49 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 5.6.32
 
@@ -29,7 +29,6 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `pengguna` (
-  `id_pengguna` char(5) NOT NULL,
   `username` varchar(30) NOT NULL,
   `password` varchar(60) NOT NULL,
   `level` enum('USER','SUPER USER') NOT NULL,
@@ -44,7 +43,7 @@ CREATE TABLE `pengguna` (
 -- Indexes for table `pengguna`
 --
 ALTER TABLE `pengguna`
-  ADD PRIMARY KEY (`id_pengguna`),
+  ADD PRIMARY KEY (`username`),
   ADD KEY `NIP` (`NIP`);
 
 --
