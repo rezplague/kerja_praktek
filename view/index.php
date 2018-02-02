@@ -66,9 +66,22 @@
           if ($_GET['page'] == 'edit-peserta-didik'){
               include "pages/peserta-didik/form-edit-peserta-didik.php";
           }
-
           # ====================================================================
 
+          # Mata Pelajaran
+          # ====================================================================
+          if ($_GET['page'] == 'mata-pelajaran'){
+              include "pages/mata-pelajaran/mata-pelajaran.php";
+          }
+
+          if ($_GET['page'] == 'tambah-mata-pelajaran'){
+              include "pages/mata-pelajaran/form-tambah-mata-pelajaran.php";
+          }
+
+          if ($_GET['page'] == 'edit-mata-pelajaran'){
+              include "pages/mata-pelajaran/form-edit-mata-pelajaran.php";
+          }
+          # ====================================================================
 
           # Kelas
           # ====================================================================
