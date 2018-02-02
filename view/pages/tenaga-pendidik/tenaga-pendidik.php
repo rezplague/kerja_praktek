@@ -14,18 +14,18 @@
           <thead class="table-secondary">
               <tr>
                   <th>NIP</th>
-                  <th>NAMA</th>
-                  <th>TEMPAT LAHIR</th>
-                  <th>TANGGAL LAHIR</th>
+                  <th>Nama</th>
+                  <th>Tempat Lahir</th>
+                  <th>Tanggal Lahir</th>
                   <th>JK</th>
-                  <th>AGAMA</th>
-                  <th>JABATAN</th>
-                  <th>TMT SEKOLAH</th>
+                  <th>Agama</th>
+                  <th>Jabatan</th>
+                  <th>TMT Sekolah</th>
                   <th>TMT PNS</th>
-                  <th>ALAMAT</th>
-                  <th>TELEPON</th>
-                  <th>TUGAS TAMBAHAN</th>
-                  <th>AKSI</th>
+                  <th>Alamat</th>
+                  <th>Telepon</th>
+                  <th>Tugas Tambahan</th>
+                  <th>Aksi</th>
                </tr>
           </thead>
 
