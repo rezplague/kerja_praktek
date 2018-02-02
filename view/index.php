@@ -37,13 +37,48 @@
              exit;
           }
 
-          if ($_GET['page'] == 'pendidik'){
-              include "pages/pendidik/pendidik.php";
+
+          # Tenaga Pendidik
+          # ====================================================================
+          if ($_GET['page'] == 'tenaga-pendidik'){
+              include "pages/tenaga-pendidik/tenaga-pendidik.php";
           }
+
+          if ($_GET['page'] == 'tambah-tenaga-pendidik'){
+              include "pages/tenaga-pendidik/form-tambah-tenaga-pendidik.php";
+          }
+
+          if ($_GET['page'] == 'edit-tenaga-pendidik'){
+              include "pages/tenaga-pendidik/form-edit-tenaga-pendidik.php";
+          }
+          # ====================================================================
+
+          # Peserta Didik
+          # ====================================================================
+          if ($_GET['page'] == 'peserta-didik'){
+              include "pages/peserta-didik/peserta-didik.php";
+          }
+
+          if ($_GET['page'] == 'tambah-peserta-didik'){
+              include "pages/peserta-didik/form-tambah-peserta-didik.php";
+          }
+
+          if ($_GET['page'] == 'edit-peserta-didik'){
+              include "pages/peserta-didik/form-edit-peserta-didik.php";
+          }
+
+          # ====================================================================
+
 
           if ($_GET['page'] == 'kelas'){
               include "pages/kelas/kelas.php";
           }
+
+
+
+
+
+
 
         ?>
 

@@ -17,14 +17,14 @@
       </h6>
 
       <li class="nav-item">
-        <a class="nav-link" href="?page=pendidik">
+        <a class="nav-link" href="?page=tenaga-pendidik">
           <span data-feather="file-text"></span>
           Tenaga Pendidik
         </a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="?page=peserta-didik">
           <span data-feather="file-text"></span>
           Peserta Didik
         </a>
