@@ -70,10 +70,35 @@
           # ====================================================================
 
 
+          # Kelas
+          # ====================================================================
           if ($_GET['page'] == 'kelas'){
               include "pages/kelas/kelas.php";
           }
 
+          if ($_GET['page'] == 'tambah-kelas'){
+              include "pages/kelas/form-tambah-kelas.php";
+          }
+
+          if ($_GET['page'] == 'edit-kelas'){
+              include "pages/kelas/form-edit-kelas.php";
+          }
+          # ====================================================================
+
+          # Nilai
+          # ====================================================================
+          if ($_GET['page'] == 'nilai'){
+              include "pages/nilai/nilai.php";
+          }
+
+          if ($_GET['page'] == 'tambah-nilai'){
+              include "pages/nilai/form-tambah-nilai.php";
+          }
+
+          if ($_GET['page'] == 'edit-nilai'){
+              include "pages/nilai/form-edit-nilai.php";
+          }
+          # ====================================================================
 
 
 
