@@ -1,7 +1,7 @@
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
   <div class="d-flex justify-content-between flex-wrap flex-md-nowrap
               align-items-center pb-2 mb-3 border-bottom">
-    <h1 class="h2">Pendidik</h1>
+    <h1 class="h2">Tenaga Pendidik</h1>
     <div class="btn-toolbar mb-2 mb-md-0">
       <a href="?page=tambah-tenaga-pendidik" class="btn btn-secondary">
         Tambah Tenaga Pendidik
@@ -31,25 +31,25 @@
 
           <tbody>
               <tr>
-                  <th scope="row">1</th>
                   <td>Mark</td>
                   <td>Otto</td>
                   <td>@mdo</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>
-                      <a href="?page=edit-tenaga-pendidik">
-                        edit
-                      </a>
-                      <a href="#">hapus</a>
-                    </td>
-                  </tr>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                  <td>@mdo</td>
+                  <td>
+                    <a href="?page=edit-tenaga-pendidik">
+                      edit
+                    </a>
+                    <a href="#">hapus</a>
+                  </td>
+              </tr>
           </tbody>
       </table>
   </div>

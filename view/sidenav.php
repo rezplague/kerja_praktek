@@ -85,6 +85,13 @@
           Ganti Password
         </a>
       </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="?page=pengguna">
+          <span data-feather="file-text"></span>
+          Pengguna
+        </a>
+      </li>
     </ul>
 
   </div>
