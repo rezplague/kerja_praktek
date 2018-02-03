@@ -113,8 +113,20 @@
           }
           # ====================================================================
 
+          # Pengguna
+          # ====================================================================
+          if ($_GET['page'] == 'pengguna'){
+              include "pages/pengguna/pengguna.php";
+          }
 
+          if ($_GET['page'] == 'tambah-pengguna'){
+              include "pages/pengguna/form-tambah-pengguna.php";
+          }
 
+          if ($_GET['page'] == 'edit-pengguna'){
+              include "pages/pengguna/form-edit-pengguna.php";
+          }
+          # ====================================================================
 
 
 
