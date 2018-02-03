@@ -1,3 +1,11 @@
+<?php
+   include "../src/TenagaPendidik.php";
+
+   $data = new TenagaPendidik();
+   $tampilData = $data->tampilData();
+
+?>
+
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
   <div class="d-flex justify-content-between flex-wrap flex-md-nowrap
               align-items-center pb-2 mb-3 border-bottom">
@@ -16,7 +24,7 @@
                   <th>NIP</th>
                   <th>NAMA</th>
                   <th>TEMPAT LAHIR</th>
-                  <th>TANGGAL LAHIR</th>
+                  <!-- <th>TANGGAL LAHIR</th>
                   <th>JK</th>
                   <th>AGAMA</th>
                   <th>JABATAN</th>
@@ -24,32 +32,30 @@
                   <th>TMT PNS</th>
                   <th>ALAMAT</th>
                   <th>TELEPON</th>
-                  <th>TUGAS TAMBAHAN</th>
+                  <th>TUGAS TAMBAHAN</th> -->
                   <th>AKSI</th>
                </tr>
           </thead>
 
           <tbody>
-              <tr>
-                  <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>
-                      <a href="?page=edit-tenaga-pendidik">
-                        edit
-                      </a>
-                      <a href="#">hapus</a>
-                    </td>
-                  </tr>
+            <?php
+            foreach ($tampilData as $value) {
+            ?>
+            <tr>
+                <td><?=$value->NIP ?></td>
+                <td><?=$value->nama_guru ?></td>
+                <td><?=$value->tempat_lahir ?></td>
+                  <td>
+                    <a href="?page=edit-tenaga-pendidik&nip=<?=$value->NIP ?>">
+                      edit
+                    </a>
+                    <a href="#">hapus</a>
+                  </td>
+            </tr>
+            <?php
+            }
+            ?>
+
           </tbody>
       </table>
   </div>
