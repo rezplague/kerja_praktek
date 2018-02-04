@@ -22,36 +22,22 @@
           <thead class="table-secondary">
               <tr>
                   <th>NIP</th>
-<<<<<<< HEAD
-                  <th>NAMA</th>
-                  <th>TEMPAT LAHIR</th>
-                  <!-- <th>TANGGAL LAHIR</th>
-=======
                   <th>Nama</th>
                   <th>Tempat Lahir</th>
                   <th>Tanggal Lahir</th>
->>>>>>> c402900e7b023c88e25f0c99edd5af3a2ed8153a
                   <th>JK</th>
                   <th>Agama</th>
                   <th>Jabatan</th>
                   <th>TMT Sekolah</th>
                   <th>TMT PNS</th>
-<<<<<<< HEAD
-                  <th>ALAMAT</th>
-                  <th>TELEPON</th>
-                  <th>TUGAS TAMBAHAN</th> -->
-                  <th>AKSI</th>
-=======
                   <th>Alamat</th>
                   <th>Telepon</th>
                   <th>Tugas Tambahan</th>
                   <th>Aksi</th>
->>>>>>> c402900e7b023c88e25f0c99edd5af3a2ed8153a
                </tr>
           </thead>
 
           <tbody>
-<<<<<<< HEAD
             <?php
             foreach ($tampilData as $value) {
             ?>
@@ -59,38 +45,27 @@
                 <td><?=$value->NIP ?></td>
                 <td><?=$value->nama_guru ?></td>
                 <td><?=$value->tempat_lahir ?></td>
-                  <td>
-                    <a href="?page=edit-tenaga-pendidik&nip=<?=$value->NIP ?>">
-=======
-              <tr>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                  <td>@mdo</td>
-                  <td>
-                    <a href="?page=edit-tenaga-pendidik">
->>>>>>> c402900e7b023c88e25f0c99edd5af3a2ed8153a
-                      edit
-                    </a>
-                    <a href="#">hapus</a>
-                  </td>
-<<<<<<< HEAD
+                <td><?=$value->tanggal_lahir ?></td>
+                <td><?=$value->jenis_kelamin ?></td>
+                <td><?=$value->agama ?></td>
+                <td><?=$value->jabatan ?></td>
+                <td><?=$value->TMT_sekolah ?></td>
+                <td><?=$value->TMT_pns ?></td>
+                <td><?=$value->alamat_guru ?></td>
+                <td><?=$value->telp ?></td>
+                <td><?=$value->tugas_tambahan ?></td>
+                <td>
+                  <a href="?page=edit-tenaga-pendidik&nip=<?=$value->NIP ?>">
+                    edit
+                  </a>
+                  <a href="#">hapus</a>
+                </td>
             </tr>
             <?php
             }
             ?>
+            </tr>
 
-=======
-              </tr>
->>>>>>> c402900e7b023c88e25f0c99edd5af3a2ed8153a
           </tbody>
       </table>
   </div>

@@ -3,7 +3,7 @@
     <h1 class="h2">Tambah Mata Pelajaran</h1>
   </div>
 
-  <form class="" action="index.html" method="post">
+  <form class="" action="pages/mata-pelajaran/proses-tambah-mata-pelajaran.php" method="post">
 
     <div class="form-group row">
       <label for="id_matapelajaran" class="col-2 col-form-label">ID Mata Pelajaran</label>

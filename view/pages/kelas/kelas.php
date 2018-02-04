@@ -1,3 +1,11 @@
+<?php
+   include "../src/Kelas.php";
+
+   $data = new Kelas();
+   $tampilData = $data->tampilData();
+
+?>
+
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
   <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
     <h1 class="h2">Kelas</h1>
@@ -19,18 +27,26 @@
           <th>Aksi</th>
         </tr>
       </thead>
+
       <tbody>
+        <?php
+        foreach ($tampilData as $value) {
+        ?>
         <tr>
-          <td>Otto</td>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
+          <td><?=$value->id_kelas ?></td>
+          <td><?=$value->nama_kelas ?></td>
+          <td><?=$value->tahun_ajaran ?></td>
+          <td><?=$value->semester ?></td>
           <td>
-            <a href="?page=edit-kelas">
+            <a href="?page=edit-kelas&id_kelas=<?=$value->id_kelas ?>">
               edit
             </a>
             <a href="#">hapus</a>
           </td>
+        </tr>
+        <?php
+        }
+        ?>
         </tr>
 
       </tbody>

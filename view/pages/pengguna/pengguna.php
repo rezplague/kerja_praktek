@@ -1,3 +1,11 @@
+<?php
+   include "../src/Pengguna.php";
+
+   $data = new Pengguna();
+   $tampilData = $data->tampilData();
+
+?>
+
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
   <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
     <h1 class="h2">Pengguna</h1>
@@ -19,19 +27,28 @@
           <th>Aksi</th>
         </tr>
       </thead>
+
       <tbody>
+        <?php
+        foreach ($tampilData as $value) {
+        ?>
         <tr>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-          <td>Otto</td>
+          <td><?=$value->username ?></td>
+          <td><?=$value->password ?></td>
+          <td><?=$value->level ?></td>
+          <td><?=$value->NIP ?></td>
           <td>
-            <a href="?page=tambah-pengguna">
+            <a href="?page=edit-pengguna&username=<?=$value->username ?>">
               edit
             </a>
             <a href="#">hapus</a>
           </td>
         </tr>
+        <?php
+        }
+        ?>
+        </tr>
+        
       </tbody>
     </table>
 

@@ -1,7 +1,7 @@
 <?php
 include "DB.php";
 
-class TenagaPendidik extends DB {
+class PesertaDidik extends DB {
 
     public function __construct(){
         parent::__construct();
@@ -11,8 +11,8 @@ class TenagaPendidik extends DB {
     public function tampilData(){
        try {
          $query = $this->connection
-                       ->query("SELECT NIP,nama_guru,tempat_lahir,tanggal_lahir,jenis_kelamin,agama,jabatan,TMT_sekolah,TMT_pns,alamat_guru,telp,tugas_tambahan
-                                FROM pendidik");
+                       ->query("SELECT NIS,NISN,nama_siswa,tempat_lahir,tanggal_lahir,jenis_kelamin,agama,alamat_siswa,jenis_kelainan,nama_ayah,nama_ibu
+                                FROM peserta_didik");
                          $query->execute();
 
        } catch (PDOException $e) {
@@ -23,36 +23,34 @@ class TenagaPendidik extends DB {
     }
 
     public function tambahData($data){
-       $query = "INSERT INTO pendidik
-                 VALUES(:nip,
+       $query = "INSERT INTO peserta_didik
+                 VALUES(:nis,
+                        :nisn,
                         :nama,
                         :tempat_lahir,
                         :tanggal_lahir,
                         :jenis_kelamin,
                         :agama,
-                        :jabatan,
-                        :tmt_sekolah,
-                        :tmt_pns,
-                        :alamat,
-                        :telp,
-                        :tugas_tambahan)";
+                        :alamat_siswa,
+                        :jenis_kelainan,
+                        :nama_ayah,
+                        :nama_ibu)";
 
        try {
          $qr = $this->connection
                     ->prepare($query);
          $data = [
-           ':nip' => $data['nip'],
+           ':nis' => $data['nis'],
+           ':nisn' => $data['nisn'],
            ':nama' => $data['nama'],
            ':tempat_lahir' => $data['tempat_lahir'],
            ':tanggal_lahir' => $data['tanggal_lahir'],
            ':jenis_kelamin' => $data['jenis_kelamin'],
            ':agama' => $data['agama'],
-           ':jabatan' => $data['jabatan'],
-           ':tmt_sekolah' => $data['tmt_sekolah'],
-           ':tmt_pns' => $data['tmt_pns'],
            ':alamat' => $data['alamat'],
-           ':telp' => $data['telp'],
-           ':tugas_tambahan' => $data['tugas_tambahan']
+           ':jenis_kelainan' => $data['jenis_kelainan'],
+           ':nama_ayah' => $data['nama_ayah'],
+           ':nama_ibu' => $data['nama_ibu']
         ];
 
         return $qr->execute($data);
@@ -63,15 +61,15 @@ class TenagaPendidik extends DB {
 
     }
 
-    public function dataNIP($nip){
-        $query = "SELECT * FROM pendidik
-                  WHERE NIP=:nip";
+    public function dataNIS($nis){
+        $query = "SELECT * FROM peserta_didik
+                  WHERE NIS=:nis";
 
         try {
             $qr = $this->connection
                        ->prepare($query);
 
-            $data = [':nip' => $nip];
+            $data = [':nis' => $nis];
 
             $qr->execute($data);
 
@@ -84,21 +82,20 @@ class TenagaPendidik extends DB {
 
     }
 
-    public function editPendidik($data){
-        $query = "UPDATE pendidik
-                  SET NIP = :nip,
-                      nama_guru = :nama_guru,
+    public function editPesertaDidik($data){
+        $query = "UPDATE peserta_didik
+                  SET NIS = :nis,
+                      NISN = :nisn,
+                      nama_siswa = :nama_siswa,
                       tempat_lahir = :tempat_lahir,
                       tanggal_lahir = :tanggal_lahir,
                       jenis_kelamin = :jenis_kelamin,
                       agama = :agama,
-                      jabatan = :jabatan,
-                      TMT_sekolah = :TMT_sekolah,
-                      TMT_pns = :TMT_pns,
-                      alamat_guru = :alamat_guru,
-                      telp = :telp,
-                      tugas_tambahan = :tugas_tambahan
-                  WHERE NIP = :nipEdit ";
+                      alamat_siswa = :alamat_siswa,
+                      jenis_kelainan = :jenis_kelainan,
+                      nama_ayah = :nama_ayah,
+                      nama_ibu = :nama_ibu
+                  WHERE NIS = :nisEdit ";
 
 
         try {
@@ -106,19 +103,18 @@ class TenagaPendidik extends DB {
                        ->prepare($query);
 
             $data = [
-                  ':nip' => $data['nip'],
-                  ':nama_guru' => $data['nama'],
+                  ':nis' => $data['nis'],
+                  ':nisn' => $data['nisn'],
+                  ':nama_siswa' => $data['nama'],
                   ':tempat_lahir' => $data['tempat_lahir'],
                   ':tanggal_lahir' => $data['tanggal_lahir'],
                   ':jenis_kelamin' => $data['jenis_kelamin'],
                   ':agama' => $data['agama'],
-                  ':jabatan' => $data['jabatan'],
-                  ':TMT_sekolah' => $data['tmt_sekolah'],
-                  ':TMT_pns' => $data['tmt_pns'],
-                  ':alamat_guru' => $data['alamat'],
-                  ':telp' => $data['telp'],
-                  ':tugas_tambahan' => $data['tugas_tambahan'],
-                  ':nipEdit' => $data['nip']
+                  ':alamat_siswa' => $data['alamat_siswa'],
+                  ':jenis_kelainan' => $data['jenis_kelainan'],
+                  ':nama_ayah' => $data['nama_ayah'],
+                  ':nama_ibu' => $data['nama_ibu'],
+                  ':nipEdit' => $data['nip'],
             ];
 
             $qr->execute($data);

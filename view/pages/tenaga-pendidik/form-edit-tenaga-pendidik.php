@@ -111,7 +111,7 @@
     <div class="form-group row">
       <label for="button" class="col-2 col-form-label"></label>
       <div class="col-10">
-        <button class="btn" name="button">Simpan</button>
+        <input type="submit" class="btn" name="" value="Simpan">
       </div>
     </div>
 

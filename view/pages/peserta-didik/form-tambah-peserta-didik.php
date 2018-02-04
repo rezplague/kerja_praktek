@@ -3,7 +3,7 @@
     <h1 class="h2">Tambah Tenaga Pendidik</h1>
   </div>
 
-  <form class="" action="index.html" method="post">
+  <form class="" action="pages/peserta-didik/proses-tambah-peserta-didik.php" method="post">
 
     <div class="form-group row">
       <label for="nis" class="col-2 col-form-label">NIS</label>
@@ -15,14 +15,14 @@
     <div class="form-group row">
       <label for="nisn" class="col-2 col-form-label">NISN</label>
       <div class="col-10">
-        <input class="form-control" type="text" value="" nama="nisn">
+        <input class="form-control" type="text" value="" name="nisn">
       </div>
     </div>
 
     <div class="form-group row">
       <label for="nama" class="col-2 col-form-label">Nama</label>
       <div class="col-10">
-        <input class="form-control" type="text" value="" nama="nama">
+        <input class="form-control" type="text" value="" name="nama">
       </div>
     </div>
 
@@ -100,7 +100,7 @@
     <div class="form-group row">
       <label for="button" class="col-2 col-form-label"></label>
       <div class="col-10">
-        <button class="btn" name="button">Tambah</button>
+        <input type="submit" class="btn" name="" value="Tambah">
       </div>
     </div>
 

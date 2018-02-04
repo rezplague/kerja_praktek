@@ -3,7 +3,7 @@
     <h1 class="h2">Tambah Pengguna</h1>
   </div>
 
-  <form class="" action="index.html" method="post">
+  <form class="" action="pages/pengguna/proses-tambah-pengguna.php" method="post">
 
     <div class="form-group row">
       <label for="username" class="col-2 col-form-label">Nama Pengguna</label>
@@ -39,7 +39,7 @@
     <div class="form-group row">
       <label for="button" class="col-2 col-form-label"></label>
       <div class="col-10">
-        <button class="btn" name="button">Tambah</button>
+        <input type="submit" class="btn" name="" value="Tambah">
       </div>
     </div>
 
