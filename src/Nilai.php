@@ -59,7 +59,7 @@ class Nilai extends DB {
             $qr = $this->connection
                        ->prepare($query);
 
-            $data = [':nip' => $nip];
+            $data = [':id_matapelajaran' => $nilai];
 
             $qr->execute($data);
 
