@@ -11,8 +11,10 @@ class Nilai extends DB {
     public function tampilData(){
        try {
          $query = $this->connection
-                       ->query("SELECT id_matapelajaran,NIS,UTS,US,UN,keterangan
-                                FROM nilai");
+                       ->query("SELECT mata_pelajaran.nama_matapelajaran, nilai.NIS, nilai.UTS, nilai.US, nilai.UN, nilai.keterangan
+                                FROM nilai
+                                JOIN mata_pelajaran
+                                ON nilai.id_matapelajaran=mata_pelajaran.id_matapelajaran");
                          $query->execute();
 
        } catch (PDOException $e) {
