@@ -17,7 +17,7 @@
     <div class="form-group row">
       <label for="nip" class="col-2 col-form-label">NIP</label>
       <div class="col-10">
-        <input class="form-control" type="text" value="<?=$tampilNIP->NIP ?>" name="nip" disabled>
+        <input class="form-control" type="text" value="<?=$tampilNIP->NIP ?>" name="nip" readonly>
       </div>
     </div>
 

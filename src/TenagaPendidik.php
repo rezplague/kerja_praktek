@@ -86,8 +86,7 @@ class TenagaPendidik extends DB {
 
     public function editPendidik($data){
         $query = "UPDATE pendidik
-                  SET NIP = :nip,
-                      nama_guru = :nama_guru,
+                  SET nama_guru = :nama_guru,
                       tempat_lahir = :tempat_lahir,
                       tanggal_lahir = :tanggal_lahir,
                       jenis_kelamin = :jenis_kelamin,
@@ -106,7 +105,6 @@ class TenagaPendidik extends DB {
                        ->prepare($query);
 
             $data = [
-                  ':nip' => $data['nip'],
                   ':nama_guru' => $data['nama'],
                   ':tempat_lahir' => $data['tempat_lahir'],
                   ':tanggal_lahir' => $data['tanggal_lahir'],

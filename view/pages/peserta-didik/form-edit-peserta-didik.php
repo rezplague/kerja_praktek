@@ -18,7 +18,7 @@
     <div class="form-group row">
       <label for="nis" class="col-2 col-form-label">NIS</label>
       <div class="col-10">
-        <input class="form-control" type="text" value="<?=$tampilNIS->NIS ?>" name="nis" disabled>
+        <input class="form-control" type="text" value="<?=$tampilNIS->NIS ?>" name="nis" readonly>
       </div>
     </div>
 

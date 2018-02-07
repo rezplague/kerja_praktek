@@ -86,12 +86,21 @@
         </a>
       </li>
 
+    <?php
+      if($_SESSION['level'] == 'SUPER USER'){
+    ?>
+
       <li class="nav-item">
         <a class="nav-link" href="?page=pengguna">
           <span data-feather="file-text"></span>
           Pengguna
         </a>
       </li>
+
+    <?php
+      }
+    ?>
+
     </ul>
 
   </div>
