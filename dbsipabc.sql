@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 08, 2018 at 12:14 PM
--- Server version: 10.1.28-MariaDB
+-- Generation Time: 08 Feb 2018 pada 15.15
+-- Versi Server: 10.1.28-MariaDB
 -- PHP Version: 5.6.32
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kelas`
+-- Struktur dari tabel `kelas`
 --
 
 CREATE TABLE `kelas` (
@@ -36,7 +36,7 @@ CREATE TABLE `kelas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `kelas`
+-- Dumping data untuk tabel `kelas`
 --
 
 INSERT INTO `kelas` (`id_kelas`, `nama_kelas`, `tahun_ajaran`, `semester`) VALUES
@@ -46,7 +46,7 @@ INSERT INTO `kelas` (`id_kelas`, `nama_kelas`, `tahun_ajaran`, `semester`) VALUE
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kelas_matapelajaran`
+-- Struktur dari tabel `kelas_matapelajaran`
 --
 
 CREATE TABLE `kelas_matapelajaran` (
@@ -57,7 +57,7 @@ CREATE TABLE `kelas_matapelajaran` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kelas_pendidik`
+-- Struktur dari tabel `kelas_pendidik`
 --
 
 CREATE TABLE `kelas_pendidik` (
@@ -68,7 +68,7 @@ CREATE TABLE `kelas_pendidik` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kelas_peserta_didik`
+-- Struktur dari tabel `kelas_peserta_didik`
 --
 
 CREATE TABLE `kelas_peserta_didik` (
@@ -79,7 +79,7 @@ CREATE TABLE `kelas_peserta_didik` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mata_pelajaran`
+-- Struktur dari tabel `mata_pelajaran`
 --
 
 CREATE TABLE `mata_pelajaran` (
@@ -89,7 +89,7 @@ CREATE TABLE `mata_pelajaran` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `mata_pelajaran`
+-- Dumping data untuk tabel `mata_pelajaran`
 --
 
 INSERT INTO `mata_pelajaran` (`id_matapelajaran`, `nama_matapelajaran`, `SKBM`) VALUES
@@ -103,7 +103,7 @@ INSERT INTO `mata_pelajaran` (`id_matapelajaran`, `nama_matapelajaran`, `SKBM`) 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `nilai`
+-- Struktur dari tabel `nilai`
 --
 
 CREATE TABLE `nilai` (
@@ -117,17 +117,20 @@ CREATE TABLE `nilai` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `nilai`
+-- Dumping data untuk tabel `nilai`
 --
 
-INSERT INTO `nilai` (`id_matapelajaran`, `NIS`, `UTS`, `US`, `UN`, `Keterangan`) VALUES
-('MP001', '22902', 77, 75, 70, 'Baik'),
-('MP002', '22902', 70, 75, 76, 'Cukup');
+INSERT INTO `nilai` (`id_nilai`, `id_matapelajaran`, `NIS`, `UTS`, `US`, `UN`, `Keterangan`) VALUES
+(1, 'MP001', '22902', 77, 75, 70, 'Baik'),
+(2, 'MP002', '22902', 70, 75, 76, 'Cukup'),
+(3, 'MP001', '22902', NULL, 30, 50, '100'),
+(4, 'MP001', '22902', NULL, 30, 50, '100'),
+(5, 'MP001', '22902', 10, 10, 10, '52');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pendidik`
+-- Struktur dari tabel `pendidik`
 --
 
 CREATE TABLE `pendidik` (
@@ -146,7 +149,7 @@ CREATE TABLE `pendidik` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `pendidik`
+-- Dumping data untuk tabel `pendidik`
 --
 
 INSERT INTO `pendidik` (`NIP`, `nama_guru`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `agama`, `jabatan`, `TMT_sekolah`, `TMT_pns`, `alamat_guru`, `telp`, `tugas_tambahan`) VALUES
@@ -158,7 +161,7 @@ INSERT INTO `pendidik` (`NIP`, `nama_guru`, `tempat_lahir`, `tanggal_lahir`, `je
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pengguna`
+-- Struktur dari tabel `pengguna`
 --
 
 CREATE TABLE `pengguna` (
@@ -169,7 +172,7 @@ CREATE TABLE `pengguna` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `pengguna`
+-- Dumping data untuk tabel `pengguna`
 --
 
 INSERT INTO `pengguna` (`username`, `password`, `level`, `NIP`) VALUES
@@ -179,7 +182,7 @@ INSERT INTO `pengguna` (`username`, `password`, `level`, `NIP`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `peserta_didik`
+-- Struktur dari tabel `peserta_didik`
 --
 
 CREATE TABLE `peserta_didik` (
@@ -197,7 +200,7 @@ CREATE TABLE `peserta_didik` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `peserta_didik`
+-- Dumping data untuk tabel `peserta_didik`
 --
 
 INSERT INTO `peserta_didik` (`NIS`, `NISN`, `nama_siswa`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `agama`, `alamat_siswa`, `jenis_kelainan`, `nama_ayah`, `nama_ibu`) VALUES
@@ -246,8 +249,7 @@ ALTER TABLE `mata_pelajaran`
 -- Indexes for table `nilai`
 --
 ALTER TABLE `nilai`
-  ADD KEY `id_matapelajaran` (`id_matapelajaran`),
-  ADD KEY `NIS` (`NIS`);
+  ADD PRIMARY KEY (`id_nilai`);
 
 --
 -- Indexes for table `pendidik`
@@ -270,39 +272,42 @@ ALTER TABLE `peserta_didik`
   ADD UNIQUE KEY `NISN` (`NISN`);
 
 --
--- Constraints for dumped tables
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- Constraints for table `kelas_matapelajaran`
+-- AUTO_INCREMENT for table `nilai`
+--
+ALTER TABLE `nilai`
+  MODIFY `id_nilai` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+--
+
+--
+-- Ketidakleluasaan untuk tabel `kelas_matapelajaran`
 --
 ALTER TABLE `kelas_matapelajaran`
   ADD CONSTRAINT `kelas_matapelajaran_ibfk_1` FOREIGN KEY (`id_kelas`) REFERENCES `kelas` (`id_kelas`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `kelas_matapelajaran_ibfk_2` FOREIGN KEY (`id_matapelajaran`) REFERENCES `mata_pelajaran` (`id_matapelajaran`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `kelas_pendidik`
+-- Ketidakleluasaan untuk tabel `kelas_pendidik`
 --
 ALTER TABLE `kelas_pendidik`
   ADD CONSTRAINT `kelas_pendidik_ibfk_1` FOREIGN KEY (`NIP`) REFERENCES `pendidik` (`NIP`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `kelas_pendidik_ibfk_2` FOREIGN KEY (`id_kelas`) REFERENCES `kelas` (`id_kelas`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `kelas_peserta_didik`
+-- Ketidakleluasaan untuk tabel `kelas_peserta_didik`
 --
 ALTER TABLE `kelas_peserta_didik`
   ADD CONSTRAINT `kelas_peserta_didik_ibfk_1` FOREIGN KEY (`id_kelas`) REFERENCES `kelas` (`id_kelas`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `kelas_peserta_didik_ibfk_2` FOREIGN KEY (`NIS`) REFERENCES `peserta_didik` (`NIS`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `nilai`
---
-ALTER TABLE `nilai`
-  ADD CONSTRAINT `nilai_ibfk_1` FOREIGN KEY (`NIS`) REFERENCES `peserta_didik` (`NIS`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `nilai_ibfk_2` FOREIGN KEY (`id_matapelajaran`) REFERENCES `mata_pelajaran` (`id_matapelajaran`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `pengguna`
+-- Ketidakleluasaan untuk tabel `pengguna`
 --
 ALTER TABLE `pengguna`
   ADD CONSTRAINT `pengguna_ibfk_1` FOREIGN KEY (`NIP`) REFERENCES `pendidik` (`NIP`) ON DELETE CASCADE ON UPDATE CASCADE;
