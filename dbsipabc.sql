@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 02, 2018 at 11:08 PM
+-- Generation Time: Feb 08, 2018 at 12:14 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 5.6.32
 
@@ -34,6 +34,14 @@ CREATE TABLE `kelas` (
   `tahun_ajaran` varchar(10) NOT NULL,
   `semester` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `kelas`
+--
+
+INSERT INTO `kelas` (`id_kelas`, `nama_kelas`, `tahun_ajaran`, `semester`) VALUES
+('K0001', '2 A', '2017/2018', 'Ganjil'),
+('K0002', '3 B', '2017/2018', 'Ganjil');
 
 -- --------------------------------------------------------
 
@@ -80,6 +88,18 @@ CREATE TABLE `mata_pelajaran` (
   `SKBM` int(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `mata_pelajaran`
+--
+
+INSERT INTO `mata_pelajaran` (`id_matapelajaran`, `nama_matapelajaran`, `SKBM`) VALUES
+('MP001', 'Matematika', 70),
+('MP002', 'Agama', 75),
+('MP003', 'Bahasa Indonesia', 76),
+('MP004', 'Bahasa Inggris', 65),
+('MP005', 'Pendidikan Kewarganegaraan', 70),
+('MP006', 'Ilmu Pengetahuan Alam', 70);
+
 -- --------------------------------------------------------
 
 --
@@ -94,6 +114,14 @@ CREATE TABLE `nilai` (
   `UN` int(3) DEFAULT NULL,
   `Keterangan` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `nilai`
+--
+
+INSERT INTO `nilai` (`id_matapelajaran`, `NIS`, `UTS`, `US`, `UN`, `Keterangan`) VALUES
+('MP001', '22902', 77, 75, 70, 'Baik'),
+('MP002', '22902', 70, 75, 76, 'Cukup');
 
 -- --------------------------------------------------------
 
@@ -113,8 +141,18 @@ CREATE TABLE `pendidik` (
   `TMT_pns` date NOT NULL,
   `alamat_guru` varchar(50) NOT NULL,
   `telp` varchar(15) NOT NULL,
-  `tugas_tambahan` varchar(20) NOT NULL
+  `tugas_tambahan` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `pendidik`
+--
+
+INSERT INTO `pendidik` (`NIP`, `nama_guru`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `agama`, `jabatan`, `TMT_sekolah`, `TMT_pns`, `alamat_guru`, `telp`, `tugas_tambahan`) VALUES
+('195512301982121002', 'Drs. Ardi Putra', 'Padang', '1955-12-30', 'L', 'ISLAM', 'Guru', '2001-07-25', '2000-06-22', 'Jl. Gajah Mada Gang Mela Ujung No.24 Padang', '082312312322', 'Bendahara'),
+('195811231991072002', 'Dra. Asmiati, MM KK', 'Pariaman', '1958-11-23', 'L', 'ISLAM', 'Wakil Kesiswaan', '2009-02-03', '2010-09-22', 'Komp. DPRD No.22 I Lapai', '23123332', 'Sekretaris'),
+('195912311985031093', 'Drs. M.Ikbal', 'Palembang', '1960-12-04', 'L', 'ISLAM', 'Guru', '2006-08-10', '2001-05-02', 'Komp. Altarindo Blok B/10 Koto Tangah Padang', '99999', 'Sekretaris'),
+('196909211995031002', 'Habibul Fuadi, S.Pd, M.Si', 'Surabaya', '1962-09-21', 'L', 'ISLAM', 'Guru', '2013-04-13', '2015-07-22', 'Komp. Cendana B 15 Lubuk Buaya', '1234', 'Sekretaris');
 
 -- --------------------------------------------------------
 
@@ -129,6 +167,14 @@ CREATE TABLE `pengguna` (
   `NIP` char(18) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `pengguna`
+--
+
+INSERT INTO `pengguna` (`username`, `password`, `level`, `NIP`) VALUES
+('user01', 'user01', 'SUPER USER', '195512301982121002'),
+('user02', 'user02', 'USER', '195912311985031093');
+
 -- --------------------------------------------------------
 
 --
@@ -137,7 +183,7 @@ CREATE TABLE `pengguna` (
 
 CREATE TABLE `peserta_didik` (
   `NIS` char(10) NOT NULL,
-  `NISN` char(10) NOT NULL,
+  `NISN` char(10) DEFAULT NULL,
   `nama_siswa` varchar(50) NOT NULL,
   `tempat_lahir` varchar(30) NOT NULL,
   `tanggal_lahir` date NOT NULL,
@@ -148,6 +194,15 @@ CREATE TABLE `peserta_didik` (
   `nama_ayah` varchar(50) NOT NULL,
   `nama_ibu` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `peserta_didik`
+--
+
+INSERT INTO `peserta_didik` (`NIS`, `NISN`, `nama_siswa`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `agama`, `alamat_siswa`, `jenis_kelainan`, `nama_ayah`, `nama_ibu`) VALUES
+('22902', '123123123', 'Adela Harimartini Putri', 'Subang', '1999-08-01', 'P', 'ISLAM', 'Kayu Kalek No. 43', 'A', 'Hariman Z', 'Trintiani'),
+('22903', NULL, 'Adytia Pratama', 'Lampung', '2018-02-01', 'L', 'HINDU', 'Gurun Laweh Lubug Begalung', 'B', 'Musrizal', 'Afriyeni'),
+('22904', NULL, 'Adzalia Fitri Annisa', 'Jakarta', '1999-06-22', 'P', 'ISLAM', 'Komp. Lubuk Gading Permai III C/2', 'A', 'Alfurqan', 'Daswita');
 
 --
 -- Indexes for dumped tables
