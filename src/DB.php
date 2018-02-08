@@ -17,7 +17,7 @@ class DB {
     public function connect(){
         try {
             $this->connection = new PDO("mysql:host=localhost;dbname=dbsipabc",
-                                      "root","",$this->opt);
+                                      "root","kitabersatu123!",$this->opt);
         } catch (PDOException $e) {
             echo $e->getMessage();
         }

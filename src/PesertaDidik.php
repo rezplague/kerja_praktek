@@ -124,6 +124,8 @@ class PesertaDidik extends DB {
             echo $e->getMessage();
         }
     }
+
+  
 }
 
 ?>

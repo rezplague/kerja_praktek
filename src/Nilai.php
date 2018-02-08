@@ -25,7 +25,7 @@ class Nilai extends DB {
     }
 
     public function tambahData($data){
-       $query = "INSERT INTO nilai
+       $query = "INSERT INTO nilai(id_matapelajaran,NIS,UTS,US,UN,Keterangan)
                  VALUES(:id_matapelajaran,
                         :NIS,
                         :UTS,
@@ -38,10 +38,10 @@ class Nilai extends DB {
                     ->prepare($query);
          $data = [
            ':id_matapelajaran' => $data['id_matapelajaran'],
-           ':NIS' => $data['NIS'],
-           ':UTS' => $data['UTS'],
-           ':US' => $data['US'],
-           ':UN' => $data['UN'],
+           ':NIS' => $data['nis'],
+           ':UTS' => $data['uts'],
+           ':US' => $data['us'],
+           ':UN' => $data['un'],
            ':keterangan' => $data['keterangan']
         ];
 
@@ -106,6 +106,37 @@ class Nilai extends DB {
             echo $e->getMessage();
         }
     }
+
+    public function namaMataPelajaran(){
+       try {
+         $query = $this->connection
+                       ->query("SELECT id_matapelajaran,nama_matapelajaran
+                                FROM mata_pelajaran");
+                         $query->execute();
+
+
+       } catch (PDOException $e) {
+           echo $e->getMessage();
+       }
+
+       return $query;
+    }
+
+    public function tampilNisNama(){
+       try {
+         $query = $this->connection
+                       ->query("SELECT nis,nama_siswa
+                                FROM peserta_didik");
+                         $query->execute();
+
+
+       } catch (PDOException $e) {
+           echo $e->getMessage();
+       }
+
+       return $query;
+    }
+
 }
 
 ?>

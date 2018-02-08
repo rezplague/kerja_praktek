@@ -92,6 +92,9 @@ class MataPelajaran extends DB {
             echo $e->getMessage();
         }
     }
+
+  
+
 }
 
 ?>

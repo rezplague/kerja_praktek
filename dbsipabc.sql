@@ -107,6 +107,7 @@ INSERT INTO `mata_pelajaran` (`id_matapelajaran`, `nama_matapelajaran`, `SKBM`) 
 --
 
 CREATE TABLE `nilai` (
+  `id_nilai` int(10) NOT NULL,
   `id_matapelajaran` char(5) NOT NULL,
   `NIS` char(10) NOT NULL,
   `UTS` int(3) DEFAULT NULL,
